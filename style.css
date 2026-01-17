@@ -1,0 +1,324 @@
+/* =========================================
+   VARIABLES & SYSTÈME DE COULEURS
+   ========================================= */
+:root {
+  --bg-body: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-main: #333;
+  --text-muted: #666;
+  --accent-blue: #ffdb70; /* Jaune pour la Timeline */
+  --accent-gold: #ffdb70; /* Jaune pour les boutons */
+  --border: #eeeeee;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode {
+  --bg-body: #121212;
+  --bg-card: #1e1e1f;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+  --border: #333333;
+}
+
+/* =========================================
+   BASE & LAYOUT
+   ========================================= */
+body { 
+  font-family: 'Poppins', sans-serif; 
+  background: var(--bg-body); 
+  color: var(--text-main); 
+  transition: var(--transition); 
+  margin: 0; 
+}
+
+main { 
+  max-width: 1100px; 
+  margin: 40px auto; 
+  display: flex; 
+  gap: 25px; 
+  padding: 20px; 
+}
+
+/* =========================================
+   SIDEBAR & BADGES
+   ========================================= */
+.sidebar { 
+  background: var(--bg-card); 
+  flex: 1; 
+  border-radius: 24px; 
+  border: 1px solid var(--border); 
+  padding: 30px; 
+  text-align: center; 
+  height: fit-content;
+  position: sticky;
+  top: 40px;
+}
+
+.avatar-box img { width: 110px; border-radius: 20px; margin-bottom: 15px; }
+
+.status-badge { 
+  background: var(--accent-gold); 
+  color: #111; 
+  padding: 6px 15px; 
+  border-radius: 10px; 
+  font-size: 0.8rem; 
+  font-weight: 600;
+  display: inline-block; 
+  margin: 10px 0; 
+}
+
+.separator { height: 1px; background: var(--border); margin: 20px 0; }
+
+.contact-list { list-style: none; padding: 0; text-align: left; }
+.contact-item { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.icon-box-yellow { color: var(--accent-gold); font-size: 1.2rem; }
+
+/* =========================================
+   CONTENU PRINCIPAL & NAVIGATION
+   ========================================= */
+.main-content { 
+  background: var(--bg-card); 
+  flex: 3; 
+  border-radius: 24px; 
+  border: 1px solid var(--border); 
+  padding: 45px; 
+  position: relative; 
+  min-height: 600px; 
+}
+
+.navbar { 
+  position: absolute; 
+  top: 0; right: 0; 
+  background: var(--border); 
+  border-radius: 0 24px 0 24px; 
+  display: flex; 
+}
+
+.nav-link { 
+  background: none; 
+  border: none; 
+  padding: 15px 25px; 
+  cursor: pointer; 
+  color: var(--text-muted); 
+  font-weight: 500; 
+  transition: var(--transition);
+}
+
+.nav-link.active { 
+  color: var(--accent-gold) !important; 
+  background: var(--bg-card); 
+  border-radius: 0 24px 0 24px; 
+}
+
+.nav-link:hover { color: var(--accent-gold); }
+
+/* =========================================
+   SECTION PARCOURS (STYLE CAPTURE D'ÉCRAN)
+   ========================================= */
+.resume-header { display: flex; align-items: center; gap: 15px; margin-top: 30px; margin-bottom: 20px; }
+
+.header-icon { 
+  background: var(--bg-card); 
+  color: var(--text-main); 
+  width: 45px; height: 45px; 
+  display: flex; align-items: center; justify-content: center; 
+  border-radius: 12px; border: 1px solid var(--border); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+}
+
+.resume-timeline { 
+  border-left: 1px solid var(--border); 
+  margin-left: 22px; 
+  padding-left: 30px; 
+  position: relative; 
+}
+
+.resume-item { position: relative; margin-bottom: 40px; }
+
+/* POINT BLEU (TIMELINE) */
+.resume-item::before { 
+  content: ""; 
+  position: absolute; 
+  left: -37px; 
+  top: 7px; 
+  width: 12px; height: 12px; 
+  background: var(--accent-blue); 
+  border-radius: 50%; 
+  border: 2px solid var(--bg-card); 
+  box-shadow: 0 0 0 2px var(--accent-blue); 
+}
+
+.resume-item-date { color: var(--accent-blue); font-weight: 600; margin-bottom: 8px; font-size: 0.95rem; }
+.resume-item-title { font-size: 1.1rem; font-weight: 600; margin: 0; }
+.resume-item-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+/* =========================================
+   BOUTON MODE SOMBRE
+   ========================================= */
+.mode-toggle { 
+  position: fixed; top: 20px; left: 20px; 
+  background: var(--bg-card); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  width: 45px; height: 45px; 
+  color: var(--accent-gold); 
+  cursor: pointer; 
+  display: flex; align-items: center; justify-content: center; 
+  z-index: 1000; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+  transition: var(--transition);
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-gold);
+  color: #111;
+}
+
+/* =========================================
+   ANIMATIONS & DÉTAILS
+   ========================================= */
+.h2 { font-size: 1.8rem; margin-bottom: 25px; position: relative; }
+
+.page-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px); /* Démarre un peu plus bas */
+  transition: all 0.4s ease-in-out;
+}
+
+.page-content.active {
+  display: block;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.project-card-simple { 
+  background: var(--bg-body); 
+  padding: 25px; border-radius: 16px; 
+  border: 1px solid var(--border); 
+}
+/* Grille de Projets */
+.filter-list { display: flex; gap: 20px; list-style: none; margin-bottom: 25px; padding: 0; }
+.filter-item button { 
+  background: none; border: none; color: var(--text-muted); 
+  cursor: pointer; font-size: 0.95rem; transition: var(--transition);
+}
+.filter-item button.active { color: var(--accent-gold); font-weight: 600; border-bottom: 2px solid var(--accent-gold); }
+
+.project-list { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 25px; 
+}
+
+.project-card { cursor: pointer; animation: scaleUp 0.4s ease forwards; }
+
+.project-img {
+  position: relative;
+  width: 100%; height: 160px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: #2b2b2c;
+}
+
+.project-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); opacity: 0.7; }
+
+.project-item-icon {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 219, 112, 0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent-gold); font-size: 2rem;
+  opacity: 0; transition: var(--transition);
+  z-index: 1;
+}
+
+.project-card:hover .project-item-icon { opacity: 1; }
+.project-card:hover img { transform: scale(1.1); opacity: 1; }
+
+.project-title { font-size: 1rem; margin-bottom: 4px; }
+.project-category { color: var(--text-muted); font-size: 0.85rem; }
+
+@keyframes scaleUp { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+/* --- SECTION ABOUT STYLISÉE --- */
+
+.about-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.about-text strong {
+  color: var(--accent-gold); /* Met en valeur tes points clés */
+  font-weight: 600;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.service-item {
+  background: var(--bg-body);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  gap: 15px;
+  transition: var(--transition);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+}
+
+.service-icon-box {
+  color: var(--accent-gold);
+  font-size: 2rem;
+  margin-top: 5px;
+}
+
+.h3 { margin-bottom: 25px; font-size: 1.5rem; }
+.h4 { margin-bottom: 8px; font-size: 1.1rem; }
+.service-item-text { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
+
+/* Responsive : une seule colonne sur mobile */
+@media (max-width: 768px) {
+  .service-list { grid-template-columns: 1fr; }
+}
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.github-link:hover {
+  color: var(--accent-gold); /* Le lien devient jaune au survol */
+}
+
+.github-link ion-icon {
+  font-size: 1.2rem;
+}

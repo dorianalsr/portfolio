@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorian Alastor | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body class="dark-mode">
+
+  <button id="mode-toggle" class="mode-toggle">
+    <ion-icon name="moon-outline" id="mode-icon"></ion-icon>
+  </button>
+
+  <main>
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="avatar-box"><img src="./assets/images/profile-avatar.png" alt="Dorian"></div>
+        <h2 class="name">Dorian Alastor</h2>
+        <p class="status-badge">Candidat Informatique</p>
+      </div>
+      <div class="separator"></div>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <div class="icon-box-yellow"><ion-icon name="mail-outline"></ion-icon></div>
+          <div class="contact-content"><p>Email</p><span>do.alastor@laposte.net</span></div>
+        </li>
+        <li class="contact-item">
+          <div class="icon-box-yellow"><ion-icon name="location-outline"></ion-icon></div>
+          <div class="contact-content"><p>Lieu</p><span>Chambéry, France</span></div>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="main-content">
+      <nav class="navbar">
+        <button class="nav-link active" data-target="about">About</button>
+        <button class="nav-link" data-target="resume">Parcours</button>
+        <button class="nav-link" data-target="projects">Projets</button>
+      </nav>
+
+      <article id="about" class="page-content active">
+  <header>
+    <h2 class="h2">À propos</h2>
+  </header>
+
+  <section class="about-text">
+    <p>
+      Actuellement <strong>Responsable Adjoint</strong> au sein de la SNC BAGA, je gère quotidiennement les aspects logistiques et opérationnels d'une entreprise familiale. Ce poste m'a permis de développer une grande autonomie et un sens aigu des responsabilités.
+    </p>
+    <p>
+      Passionné par les technologies numériques, je consacre mon temps libre au <strong>développement Python</strong> et à l'architecture système. Mon objectif est de conjuguer mon expérience de terrain avec mes compétences techniques pour concevoir des outils informatiques performants.
+    </p>
+  </section>
+
+  <section class="service">
+    <h3 class="h3">Expertise actuelle</h3>
+
+    <ul class="service-list">
+      <li class="service-item">
+        <div class="service-icon-box"><ion-icon name="business-outline"></ion-icon></div>
+        <div class="service-content-box">
+          <h4 class="h4">Gestion & Responsabilité</h4>
+          <p class="service-item-text">Pilotage logistique, gestion des stocks et rigueur administrative au sein de la SNC BAGA.</p>
+        </div>
+      </li>
+
+      <li class="service-item">
+        <div class="service-icon-box"><ion-icon name="terminal-outline"></ion-icon></div>
+        <div class="service-content-box">
+          <h4 class="h4">Développement Python</h4>
+          <p class="service-item-text">Création de scripts logiques et d'algorithmes (Jeu du Pendu, calculs SIN).</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</article>
+
+      <article id="resume" class="page-content">
+        <div class="resume-header">
+          <div class="header-icon"><ion-icon name="book-outline"></ion-icon></div>
+          <h2 class="h2">Education</h2>
+        </div>
+        <div class="resume-timeline">
+          <div class="resume-item">
+            <h4 class="resume-item-title">Lycée Louis Armand</h4>
+            <p class="resume-item-date">2022 — 2023</p>
+            <p class="resume-item-text">Terminale STI2D — Spécialité SIN (Systèmes d'Information et Numérique).</p>
+          </div>
+          <div class="resume-item">
+            <h4 class="resume-item-title">Lycée Louis Armand</h4>
+            <p class="resume-item-date">Janvier 2021 — 2022</p>
+            <p class="resume-item-text">Reprise d'études en classe de 1ère STI2D en cours d'année après mon service militaire.</p>
+          </div>
+          <div class="resume-item">
+            <h4 class="resume-item-title">École des Mousses</h4>
+            <p class="resume-item-date">2019 — 2020</p>
+            <p class="resume-item-text">Formation militaire et maritime initiale. Apprentissage des valeurs de cohésion et de rigueur.</p>
+          </div>
+        </div>
+
+        <div class="resume-header">
+          <div class="header-icon"><ion-icon name="briefcase-outline"></ion-icon></div>
+          <h2 class="h2">Experience</h2>
+        </div>
+        <div class="resume-timeline">
+          <div class="resume-item">
+            <h4 class="resume-item-title">Responsable Adjoint — SNC BAGA</h4>
+            <p class="resume-item-date">2023 — Présent</p>
+            <p class="resume-item-text">Gestion opérationnelle de l'entreprise familiale : stocks, logistique et comptabilité.</p>
+          </div>
+          <div class="resume-item">
+            <h4 class="resume-item-title">Matelot — Porte-avions Charles de Gaulle</h4>
+            <p class="resume-item-date">2020 — Décembre 2020</p>
+            <p class="resume-item-text">Embarquement opérationnel au sein de la Marine Nationale. Travail en équipe dans un environnement exigeant.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="projects" class="page-content">
+        <header>
+          <h2 class="h2">Mes Projets</h2>
+        </header>
+
+        <ul class="filter-list">
+          <li class="filter-item"><button class="active" data-filter="all">Tous</button></li>
+          <li class="filter-item"><button data-filter="jeux">Jeux Python</button></li>
+          <li class="filter-item"><button data-filter="algo">Algorithmique</button></li>
+        </ul>
+
+        <div class="project-list">
+          <div class="project-card" data-category="jeux">
+  <figure class="project-img">
+    <div class="project-item-icon"><ion-icon name="terminal-outline"></ion-icon></div>
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400" alt="Jeu du Pendu">
+  </figure>
+  
+  <h4 class="project-title">Jeu du Pendu (Python)</h4>
+  <p class="project-category">Développement Logique & Algorithmique</p>
+  
+  <div class="project-tech-tags">
+    <span>Boucles & Conditions</span>
+    <span>Gestion de Listes</span>
+  </div>
+
+  <a href="#" class="github-link">
+    <ion-icon name="logo-github"></ion-icon>
+    <span>Voir le code source</span>
+  </a>
+</div>
+<div class="project-card" data-category="algo">
+  <figure class="project-img">
+    <div class="project-item-icon"><ion-icon name="calculator-outline"></ion-icon></div>
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400" alt="Simulateur de budget">
+  </figure>
+  
+  <h4 class="project-title">Simulateur Financier</h4>
+  <p class="project-category">Outil de calcul d'épargne et de crédit</p>
+  
+  <div class="project-tech-tags">
+    <span>Mathématiques Appliquées</span>
+    <span>Gestion de Flux</span>
+  </div>
+
+  <a href="#" class="github-link">
+    <ion-icon name="logo-github"></ion-icon>
+    <span>Voir la logique Python</span>
+  </a>
+</div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
